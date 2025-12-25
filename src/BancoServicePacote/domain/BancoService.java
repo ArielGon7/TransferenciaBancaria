@@ -1,5 +1,7 @@
 package BancoServicePacote.domain;
 
+import org.w3c.dom.ls.LSOutput;
+
 public class BancoService {
     private double saldo;
     private String senha;
@@ -20,7 +22,12 @@ public class BancoService {
     }
 
     public void adicionarSaldo(double novoSaldo){
-        this.saldo += novoSaldo;
+        try{
+            this.saldo += novoSaldo;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 
     public void transferir(BancoService bancoService, double saldoTransferir){
