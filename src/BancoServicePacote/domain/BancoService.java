@@ -1,7 +1,5 @@
 package BancoServicePacote.domain;
 
-import org.w3c.dom.ls.LSOutput;
-
 public class BancoService {
     private double saldo;
     private String senha;
@@ -31,10 +29,10 @@ public class BancoService {
     }
 
     public void transferir(BancoService bancoService, double saldoTransferir){
-        this.saldo = saldo - saldoTransferir;
         if(this.saldo < saldoTransferir){
             System.out.println("Saldo invalido");
         }else{
+            this.saldo = saldo - saldoTransferir;
             bancoService.saldo += saldoTransferir;
         }
 
