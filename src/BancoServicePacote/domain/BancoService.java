@@ -1,6 +1,6 @@
 package BancoServicePacote.domain;
 
-public class BancoService {
+public class BancoService implements Comparable<BancoService>{
     private double saldo;
     private String senha;
     private String usuario;
@@ -8,6 +8,7 @@ public class BancoService {
     public BancoService(String usuario, String senha) {
         this.usuario = usuario;
         this.senha = senha;
+
     }
 
     @Override
@@ -64,5 +65,11 @@ public class BancoService {
 
     public void setUsuario(String usuario) {
         this.usuario = usuario;
+    }
+
+
+    @Override
+    public int compareTo(BancoService o) {
+        return this.usuario.compareTo(o.getUsuario());
     }
 }
